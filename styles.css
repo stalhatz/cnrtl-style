@@ -7,32 +7,79 @@
 ==/UserStyle== */
 @-moz-document domain("cnrtl.fr") {
     :root {
-        --system-ui: "serif";
-        --primary: rgb(215, 232, 255);
+        color-scheme: light dark;
+        --font-family: "Roboto";
+        --primary: color-mix(in lch, white 30%, #466ea1);
+        --text-color: light-dark(rgb(30,30,30),rgb(220,220,220));
+        --secondary: light-dark(#f39c12,#f39c12);
+        --attention: light-dark(#e74c3c,#2ecc71)
+        --background : light-dark(#f8f9fa,#212529);
+        --o: rgb(250 120 100 / 0.2);
+        --b: rgb(255 200 100 / 0.2);
+        --def-color: color-mix(in lch, var(--primary) 80%, var(--secondary) );
+        /*Global transparency*/
+        --tr: 0.1;
+        --tr-p:10%;
+        --stroke-color:black;
+        --stroke-width: 0.3px;
+        --stroke-blur : 0.5px;
+    }
+       
+    #vtoolbar #vitemselected span{
+        color: color-mix(in lch, var(--secondary) 10%, var(--attention));
+    }
+    #vtoolbar #vitemselected a{
+        color: var(--text-color)
     }
     #lexicontent {
-        font-family: var(--system-ui) !important
+        font-family: var(--font-family) !important
     }
     #contentbox {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
         border: none;
+        background-color: rgba(255,255,255,var(--tr) );
+        color:var(--text-color);
     }
+    
+    #contentbox a{
+        color:var(--text-color);
+    }
+    
     #header {
         display: none;
     }
     body{
-        font-family: initial
+        background: var(--background);
+        font-family: var(--font-family);
+        color:var(--text-color) !important;
     }
 
     #menubox {
         display: none;
     }
-    #nav {
-        background-color: var(--primary)
-        
+    
+    .box{
+    border: none;
+    background: color-mix(in srgb, white var(--tr-p), transparent);
     }
+    
+    #nav {
+        background-color: color-mix(in srgb, var(--primary) var(--tr-p), transparent);   
+    }
+    
+    #nav a, #nav ul li.current a, #nav a:hover{
+        color:var(--text-color)
+    }
+    
+    #nav ul{
+        padding-block: 8px;
+    }
+    
     #nav ul li.current{
-      background: #ffefab;
+      text-decoration: underline;
+      text-decoration-color: var(--secondary);
+      text-decoration-thickness: 0.2rem;
+      
     }
     
     #nav ul li.current_left{
@@ -43,40 +90,70 @@
     }
     
     #nav ul li.current{
-        font-size: 1.5rem
+        font-size: 1.5rem;
+        background: none;
     }
     #nav img{
         display: none;
     }
     
     #nav ul li a{
-        color : #333;
+        color : inherit;
     }
     #nav ul li{
         font-size: 1rem
     }
     
+    #legal ul.links a{
+    background: none;
+    padding-left: initial
+    }
+    
+    .box h2{
+        background:none;
+        padding-left: 6px;
+        color : inherit;
+        font-size: 1.3rem;
+    }
+    
+    .dico_box{
+        margin: initial;
+    }
+    
     #lexicontent > div > div {
         margin-bottom: 1rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, var(--tr));
     }
-
+    .tlf_csyntagme{
+        background-color: color-mix(in srgb, var(--secondary) 60%, transparent);
+    }
     span.tlf_cdefinition {
-        background-color: var(--primary) !important;
+        background-color: initial !important;
+        text-decoration: underline;
+        text-decoration-color: var(--secondary) !important;
+        text-decoration-thickness: 0.1rem;
+        color: inherit;
     }
 
     .tlf_cexemple {
-        font-size: 1.3rem;
+        font-family: serif;
+        font-size: 1rem;
         display: block;
-        border: 1px solid rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(0, 0, 0, var(--tr));
         padding: 0.25rem;
         margin: 0.25rem;
         margin-left: 2.5rem;
-        background-color: rgba(0, 0, 1, 0.05);
+        background-color: color-mix(in srgb, var(--primary) var(--tr-p), transparent);
+    }
+    
+    .tlf_tabulation{
+        background: none;
+        margin: 0; 
+       
     }
     #vitemselected {
-        font-family: system-ui;
+        font-family: var(--font-family);
         font-size: 2rem;
         border: none !important;
         margin-block: 1rem;
@@ -85,15 +162,16 @@
         }
         a {
             background: none !important;
-            background-color: white !important;
+            background-color: rgba(255,255,255,var(--tr)) !important;
         }
     }
 
     #wrap {
         border: none;
-        box-shadow: 2px 2px 30px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 2px 2px 30px 10px rgba(0, 0, 0, var(--tr));
         padding-inline: 2rem;
         background: none;
+        background: color-mix(in srgb, var(--primary) var(--tr-p), transparent);
     }
 
     .bottombox {
@@ -105,18 +183,26 @@
     }
 
     .tab_box {
-        border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1.5px solid rgba(0, 0, 0, var(--tr));
         margin-bottom: 1rem;
         li {
             font-size: 1rem;
-            font-family: system-ui;
-            a {
+            font-family: var(--font-family);
+            a, a:hover, a:visited {
                 border: none !important;
+                background: none !important;
+                /*background-color: color-mix(in srgb, var(--secondary) var(--tr-p), transparent);*/
+
             }
-            a.active {
+            a.active, a:visited.active {
                 font-size: 1.2rem;
-                font-weight: normal !important;
-                background-color: var(--primary) !important;
+                font-weight: bold !important;
+                /*background-color: var(--secondary) !important;*/
+                /*color:light-dark(white,black);*/
+                color: inherit;
+                text-decoration: underline;
+                text-decoration-color: var(--secondary);
+                text-decoration-thickness: 0.1rem;
             }
         }
     }
@@ -126,7 +212,7 @@
     }
     .messagecenter {
         font-family: serif;
-        color: black;
+        color: inherit;
         font-weight: normal;
         font-size: 1rem;
     }
