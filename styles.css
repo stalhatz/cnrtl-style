@@ -1,109 +1,133 @@
-/* ==UserStyle==
+    /* ==UserStyle==
 @name           ?
 @namespace      github.com/openstyles/stylus
 @version        1.0.0
-@description    A style for the 2012 designed, but still best dictionary out there, cnrtl.fr website
-@author         Stavros A.
+@description    A new userstyle
+@author         Me
 ==/UserStyle== */
-
 @-moz-document domain("cnrtl.fr") {
     :root {
         --system-ui: "serif";
-        --primary: rgb(215,232,255);
+        --primary: rgb(215, 232, 255);
     }
-    #lexicontent{
+    #lexicontent {
         font-family: var(--system-ui) !important
     }
-    #contentbox{
+    #contentbox {
         font-size: 1.5rem !important;
-        border : none;
+        border: none;
     }
-    #header{
-        display:none;
-    }
-
-    #menubox{
-        display:none;
-    }
-    #nav{
-        display:none;
-    }
-    
-    #lexicontent > div > div{
-        margin-bottom : 1rem;
-        padding-bottom : 1rem;
-        border-bottom : 1px solid rgba(0,0,0,0.2);
-    }
-    
-    span.tlf_cdefinition{
-        background-color: var(--primary) !important;
-    }
-    
-    .tlf_cexemple{
-        font-size: 1.3rem;
-        display : block;
-        border : 1px solid rgba(0,0,0,0.2);
-        padding : 0.25rem;
-        margin : 0.25rem ;
-        margin-left: 2.5rem;
-        background-color: rgba(0,0,1,0.05);
-    }
-    #vitemselected{
-        font-family : system-ui;
-        font-size:2rem;
-        border: none !important;
-        margin-block : 1rem;
-        span::before{
-            display:none;
-        }
-        a{
-            background: none !important;
-            background-color: white !important;
-            
-        }
-    }
-    
-    #wrap{
-        border : none;
-        box-shadow : 2px 2px 30px 10px rgba(0,0,0,0.2);
-        padding-inline : 2rem;
-        background : none;
-    }
-    
-    .bottombox{
-        border:none;
-    }
-    
-    #vtoolbar > ul >li {
-        border : none;
-    
-    }
-    
-    .tab_box{
-        border-bottom: 1.5px solid rgba(0,0,0,0.2);
-            margin-bottom : 1rem;
-        li{
-            font-size : 1rem;
-            font-family: system-ui;
-            a{
-                border:none !important; 
-            }
-            a.active{
-                font-size: 1.2rem;
-                font-weight: normal !important;
-                background-color : var(--primary) !important;
-            }
-        }
-    }
-    
-    div.box.bottombox{
+    #header {
         display: none;
     }
-    .messagecenter{
+    body{
+        font-family: initial
+    }
+
+    #menubox {
+        display: none;
+    }
+    #nav {
+        background-color: var(--primary)
+        
+    }
+    #nav ul li.current{
+      background: #ffefab;
+    }
+    
+    #nav ul li.current_left{
+        background: none;
+    }
+    #nav ul li.sep{
+        background: none;
+    }
+    
+    #nav ul li.current{
+        font-size: 1.5rem
+    }
+    #nav img{
+        display: none;
+    }
+    
+    #nav ul li a{
+        color : #333;
+    }
+    #nav ul li{
+        font-size: 1rem
+    }
+    
+    #lexicontent > div > div {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    span.tlf_cdefinition {
+        background-color: var(--primary) !important;
+    }
+
+    .tlf_cexemple {
+        font-size: 1.3rem;
+        display: block;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 0.25rem;
+        margin: 0.25rem;
+        margin-left: 2.5rem;
+        background-color: rgba(0, 0, 1, 0.05);
+    }
+    #vitemselected {
+        font-family: system-ui;
+        font-size: 2rem;
+        border: none !important;
+        margin-block: 1rem;
+        span::before {
+            display: none;
+        }
+        a {
+            background: none !important;
+            background-color: white !important;
+        }
+    }
+
+    #wrap {
+        border: none;
+        box-shadow: 2px 2px 30px 10px rgba(0, 0, 0, 0.2);
+        padding-inline: 2rem;
+        background: none;
+    }
+
+    .bottombox {
+        border: none;
+    }
+
+    #vtoolbar > ul > li {
+        border: none;
+    }
+
+    .tab_box {
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
+        li {
+            font-size: 1rem;
+            font-family: system-ui;
+            a {
+                border: none !important;
+            }
+            a.active {
+                font-size: 1.2rem;
+                font-weight: normal !important;
+                background-color: var(--primary) !important;
+            }
+        }
+    }
+
+    div.box.bottombox {
+        display: none;
+    }
+    .messagecenter {
         font-family: serif;
         color: black;
         font-weight: normal;
         font-size: 1rem;
-        
     }
 }
