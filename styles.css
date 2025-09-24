@@ -19,7 +19,6 @@
         --def-color: color-mix(in lch, var(--primary) 80%, var(--secondary) );
         /*Global transparency*/
         --tr: 0.1;
-        --tr-p:10%;
         --stroke-color:black;
         --stroke-width: 0.3px;
         --stroke-blur : 0.5px;
@@ -172,7 +171,7 @@
         padding: 0.25rem;
         margin: 0.25rem;
         margin-left: 2.5rem;
-        background-color: color-mix(in srgb, var(--primary) var(--tr-p), transparent);
+        background-color: color-mix(in srgb, var(--primary) calc(var(--tr) * 100%), transparent);
     }
     
     .tlf_tabulation{
@@ -199,7 +198,7 @@
         box-shadow: 2px 2px 30px 10px rgba(0, 0, 0, var(--tr));
         padding-inline: 2rem;
         background: none;
-        background: color-mix(in srgb, var(--primary) var(--tr-p), transparent);
+        background: color-mix(in srgb, var(--primary) calc(var(--tr) * 100%), transparent);
     }
 
     .bottombox {
@@ -219,7 +218,7 @@
             a, a:hover, a:visited {
                 border: none !important;
                 background: none !important;
-                /*background-color: color-mix(in srgb, var(--secondary) var(--tr-p), transparent);*/
+                /*background-color: color-mix(in srgb, var(--secondary) calc(var(--tr) * 100%), transparent);*/
 
             }
             a.active, a:visited.active {
