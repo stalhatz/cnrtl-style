@@ -152,9 +152,12 @@
         padding-bottom: 1rem;
         border-bottom: 1px solid rgba(0, 0, 0, var(--tr));
     }
-    .tlf_csyntagme{
-        background-color: color-mix(in srgb, var(--secondary) 60%, transparent);
+    
+    #lexicontent .tlf_csyntagme{
+        color: var(--inv-text-color);
+        background-color: color-mix(in hsl, var(--primary) 95%, var(--secondary) );
     }
+    
     span.tlf_cdefinition {
         background-color: initial !important;
         text-decoration: underline;
