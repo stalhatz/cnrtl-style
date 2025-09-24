@@ -32,6 +32,16 @@
       /* forces dark color-scheme */
       color-scheme: dark;
     }
+    
+    #presentation{
+        height:auto;
+    }
+    
+    #nouveautes{
+        height:auto;
+    }
+    #nouveautes p{
+        font-size: inherit;
     }
        
     #vtoolbar #vitemselected span{
@@ -40,6 +50,15 @@
     #vtoolbar #vitemselected a{
         color: var(--text-color)
     }
+    
+    #vtoolbar a{
+        height: auto;
+    }
+    
+    #vtoolbar > ul > li {
+        border: none;
+    }
+    
     #lexicontent {
         font-family: var(--font-family) !important
     }
