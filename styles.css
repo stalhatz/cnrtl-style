@@ -89,6 +89,12 @@
     .box{
     border: none;
     background: color-mix(in srgb, white var(--tr-p), transparent);
+    .box a:hover{
+        font-weight: 600;
+        color: var(--secondary);
+        text-decoration: underline;
+        font-size: 1rem;
+    }
     }
     
     #nav {
@@ -127,6 +133,7 @@
     
     #nav ul li a{
         color : inherit;
+        font-weight: 600;
     }
     #nav ul li{
         font-size: 1rem
@@ -138,6 +145,7 @@
     }
     
     .box h2{
+        font-weight: 600;
         background:none;
         padding-left: 6px;
         color : inherit;
@@ -227,7 +235,7 @@
             }
             a.active, a:visited.active {
                 font-size: 1.2rem;
-                font-weight: bold !important;
+                font-weight: 600 !important;
                 /*background-color: var(--secondary) !important;*/
                 /*color:light-dark(white,black);*/
                 color: inherit;
