@@ -99,6 +99,7 @@
     
     #nav {
         background-color: color-mix(in srgb, var(--primary) var(--tr-p), transparent);   
+        margin-top:2rem
     }
     
     #nav a, #nav ul li.current a, #nav a:hover{
@@ -215,6 +216,7 @@
 
     .bottombox {
         border: none;
+        margin-bottom: 1rem;
     }
 
     #vtoolbar > ul > li {
@@ -246,8 +248,8 @@
         }
     }
 
-    div.box.bottombox {
-        display: none;
+    #footer{
+        margin-bottom: 2rem
     }
     .messagecenter {
         font-family: serif;
